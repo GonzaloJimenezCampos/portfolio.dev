@@ -1,0 +1,89 @@
+<header
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+>
+  <nav
+    class="flex px-3 text-sm font-medium rounded-full text-white-400 dark:text-gray-200 justify-center items-center"
+  >
+    <a
+      href="#experiencia"
+      class="nav-link relative block px-2 py-2 transition hover:text-cyan-500"
+      aria-label="experiencia">Experiencia</a
+    >
+    <a
+      href="#proyectos"
+      class="nav-link relative block px-2 py-2 transition hover:text-cyan-500"
+      aria-label="proyectos">Proyectos</a
+    >
+    <a
+      href="#aboutme"
+      class="nav-link relative block px-2 py-2 transition hover:text-cyan-500"
+      aria-label="aboutme">Sobre mí</a
+    >
+    <a
+      href="mailto:fjinfantejob@gmail.com"
+      target="_blank"
+      class="nav-link font-extrabold relative block px-2 py-2 transition hover:text-red-700"
+      aria-label="contacto">Contacto</a
+    >
+  </nav>
+</header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  
+      const sections = document.querySelectorAll("section");
+      const navItems = document.querySelectorAll("header nav a");
+  
+      const callback = (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+  
+            navItems.forEach((item) => {
+  
+              if (item.getAttribute("aria-label") === entry.target.id) {
+                item.classList.add("text-green-500");
+              } else {
+                item.classList.remove("text-green-500");
+              }
+            });
+          }
+        });
+      };
+  
+      const observer = new IntersectionObserver(callback, {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.3,
+      });
+  
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+  
+      document.onvisibilitychange = () => {
+        if (document.visibilityState === "hidden") {
+          observer.disconnect();
+        } else {
+          sections.forEach((section) => {
+            observer.observe(section);
+          });
+        }
+      };
+    });
+  </script>
+  
+  
+
+<style>
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  @keyframes nav-shadown {
+    to {
+      @apply shadow-lg ring-1 backdrop-blur bg-black/50 ring-white/10;
+    }
+  }
+</style>

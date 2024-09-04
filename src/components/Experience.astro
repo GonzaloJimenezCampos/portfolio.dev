@@ -1,0 +1,31 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+  {
+    date: "Actualmente",
+    title: "FxLoL",
+    company: "Proyecto Actual",
+    description:
+      "FxLoL es una página web que analiza partidas de League of Legends, dando recomendaciones al jugador para ayudarlo a mejorar. También cuenta con un foro con herramientas de moderación donde los jugadores se pueden reunir y compartir experiencias y consejos.",
+  },
+  {
+    date: "Mar 2024 - Jun 2024 · 4 meses",
+    title: "Programador Full Stack (Prácticas)",
+    company: "Ayesa",
+    location: "Seville, Andalusia, Spain · Presencial",
+    description:
+      "Participé en un proyecto en crecimiento de Repsol de una empresa de alquiler de choches en Madrid (Wible). En el desempeño de mis actividades adquirí muchos conocimientos de python y Django, así como el funcionamiento de un proyecto real.",
+  }
+]
+---
+
+<ol class="relative">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

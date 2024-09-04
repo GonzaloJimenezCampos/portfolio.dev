@@ -1,0 +1,90 @@
+---
+import Badge from "../components/Badge.astro";
+import Layout from "../layouts/Layout.astro";
+import Socials from "../components/Socials.astro";
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import GithubIcon from "../components/icons/GithubIcon.astro";
+import MailIcon from "../components/icons/MailIcon.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import CodeIcon from "../components/icons/CodeIcon.astro";
+import Projects from "../components/Projects.astro";
+import ProfileIcon from "../components/icons/ProfileIcon.astro";
+import About from "../components/About.astro";
+---
+
+<Layout
+  title="Porfolio de Gonzalo Jiménez Campos - Desarrollador Web Full-Stack"
+  description="Considera contratar a Gonzalo para proyectos reales y profesionales"
+>
+  <main class="px-2">
+    <SectionContainer class="py-24 pb-24">
+      <img
+        class="rounded-full size-[200px]"
+        src="/pfp.png"
+        alt="Gonzalo photo"
+      />
+      <h1
+  class="text-white text-3xl md:text-4xl lg:text-5xl font-bold pb-3 flex flex-col lg:flex-row lg:items-center lg:gap-x-4"
+>
+  Buenas, soy Gonzalo
+  <a
+    href="https://www.linkedin.com/in/gjimenezcampos/"
+    target="_blank"
+    class="lg:ml-4 justify-center"
+    rel="noopener"
+  >
+    <Badge>Disponible para trabajar</Badge>
+  </a>
+</h1>
+      
+      <h2 class="text-2xl text-wrap max-w-[700px]">
+        <span>Desarrollador Web Full-Stack</span>. <span
+          class="text-yellow-200/90">De Sevilla, España</span
+        >. <span class="opacity-75 font-semibold"
+          >Graduado en Diseño de Aplicaciones Web</span
+        >.
+      </h2>
+
+      <nav class="flex gap-x-4 mt-6 flex-wrap">
+        <Socials href="https://www.linkedin.com/in/gjimenezcampos/">
+          <LinkedInIcon class="size-4" />
+          LinkedIn
+        </Socials>
+        <Socials href="https://github.com/GonzaloJimenezCampos">
+          <GithubIcon class="size-4" />
+          Github
+        </Socials>
+        <Socials href="mailto:gjc2017@gmail.com">
+          <MailIcon class="size-4" />
+          gjc2017@gmail.com
+        </Socials>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="experiencia" class="py-10">
+      <h2 class="text-2xl ml-8 font-semibold mb-6 flex gap-x-3 items-center">
+        <Briefcase class="size-8" />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos" class="py-10">
+      <h2 class="text-2xl ml-8 font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-8" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="aboutme" class="py-10">
+      <h2 class="text-2xl font-semibold justify-center flex gap-x-3 items-center">
+        <ProfileIcon class="size-8" />
+        Sobre mí
+      </h2>
+      <About />
+    </SectionContainer>
+  </main>
+</Layout>
